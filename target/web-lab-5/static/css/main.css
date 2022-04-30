@@ -1,0 +1,1107 @@
+/* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url('../fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-700 - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+    url('../fonts/lato-v17-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-900 - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+    url('../fonts/lato-v17-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Lato", serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    background-color: #4CAF50;
+    padding: 20px;
+}
+
+.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.wrapper-wide {
+    max-width: 87%;
+    margin: 0 auto;
+}
+
+.sections-title {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.sections-title:after {
+    display: block;
+    content: ' ';
+    width: 253px;
+    height: 3px;
+    background-color: #3838f6;
+    position: absolute;
+    bottom: 0;
+    border: 0;
+}
+
+header {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header-active {
+    background-color: black;
+    opacity: 0.75;
+    z-index: 5;
+    padding-bottom: 30px;
+}
+
+.logo-img {
+    width: 45px;
+    margin: 5px
+}
+
+.head-wrapper {
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.header-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-item {
+    margin-right: 80px;
+}
+
+.header-item:last-child {
+    margin-right: 0;
+}
+
+.header-burger {
+    background-color: white;
+    padding: 10px;
+    opacity: 0.75;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: none;
+}
+
+.languages {
+    display: flex;
+    justify-content: space-between;
+}
+
+.change-lang {
+    width: 30%;
+}
+
+.change-lang-btn {
+    color: white;
+    background-color: #1f1fa7;
+}
+
+.greeting {
+    font-size: 30px;
+    color: white;
+}
+
+.error {
+    font-size: 25px;
+    color: red;
+    font-weight: 900;
+}
+
+.menu-list-img {
+    width: 32px;
+}
+
+.logo-link {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    line-height: 24px;
+}
+
+.logo-link:hover, .logo-link:focus, .logo-link:active {
+    opacity: .75;
+}
+
+.intro {
+    min-height: 100vh;
+    background: url("../img/inception.png") no-repeat;
+    background-size: cover;
+    padding-top: 185px;
+}
+
+.into-title {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+    max-width: 100%;
+    margin-bottom: 22px;
+}
+
+.into-subtitle {
+    color: white;
+    font-size: 18px;
+    line-height: 22px;
+    max-width: 546px;
+    margin-bottom: 60px;
+}
+
+.form-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login-form-input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid silver;
+}
+
+
+.login-form-input, .login-form-input::placeholder {
+    margin-bottom: 25px;
+    margin-right: 60px;
+    width: 300px;
+    padding-left: 40px;
+    padding-bottom: 14px;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+}
+
+.login-submit {
+    text-transform: uppercase;
+    background-color: #3838f6;
+    padding: 1.3vw 3.6vw;
+    font-size: 18px;
+    border: 0;
+    color: white;
+}
+
+.login-submit:hover, .login-submit:focus, .login-submit:active {
+    background-color: #1f1fa7;
+}
+
+
+.lang-label {
+    color: white;
+    font-size: 18px;
+}
+
+/*End of header styles*/
+
+.benefits {
+    margin-bottom: 131px;
+}
+
+.benefits-wrapper {
+    max-width: 1260px;
+    margin: 0 auto;
+    box-shadow: 0 2px 20px black;
+    position: relative;
+}
+
+
+.benefit-title {
+    width: 100%;
+    background-color: white;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    padding: 70px 95px 65px 95px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-80%);
+}
+
+.benefits-cards {
+    padding: 0 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 55px;
+}
+
+.benefit-card {
+    margin-bottom: 120px;
+    grid-column: span 1;
+    padding: 60px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cross-img {
+    display: none;
+}
+
+.img-card {
+    margin-bottom: 37px;
+}
+
+.img-card > img {
+    display: block;
+    width: 32px;
+}
+
+.benefits-card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 25px;
+}
+
+.benefits-info {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 40px;
+}
+
+.benefit-reg {
+    font-size: 16px;
+    text-decoration: none;
+    color: #3838f6;
+}
+
+.benefit-reg:hover, .benefit-reg:focus {
+    color: #1f1fa7;
+}
+
+/*end of the benefits section*/
+
+.films-types {
+    margin-bottom: 100px;
+}
+
+.films-types-title {
+    margin-bottom: 35px;
+}
+
+.types-images {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+}
+
+figure.types-image.size-lg {
+    grid-column: span 3;
+}
+
+figure.types-image.size-small {
+    grid-column: span 2;
+}
+
+img.type-image {
+    height: 270px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    position: relative;
+}
+
+.types-img-title {
+    font-size: 30px;
+    color: white;
+    position: relative;
+    bottom: 22%;
+    left: 7%;
+    z-index: 3;
+    margin: -3%;
+}
+
+
+.card {
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 1%;
+    background-color: black;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-img {
+    height: 100%;
+    width: auto;
+    margin: 0;
+}
+
+.card-other {
+    padding: 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*admin films styles*/
+
+.add-film {
+    padding: 15px;
+    width: 100%;
+    background: black;
+}
+
+.add-film-form {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.search-films {
+    width: 50%;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+#searchInput {
+    height: 30px;
+    max-width: 220px
+}
+
+.search {
+    height: 36px;
+    background-color: yellowgreen;
+}
+
+.add-film-btn {
+    min-width: 150px;
+    background-color: yellowgreen;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.manage-film {
+    width: 80%;
+    display: flex;
+    background-color: black;
+}
+
+.film-edit {
+    width: 40px;
+    height: 40px;
+}
+
+.film-edit-btn {
+    width: 20px;
+    margin-right: 7px;
+}
+
+.genre-search {
+    margin-left: 30px;
+    display: inline-block;
+}
+
+.name-search {
+    display: inline-block;
+}
+
+.genres-options {
+    height: 36px;
+    width: 220px;
+}
+
+/*admin films styles*/
+
+/*film card styles*/
+
+h2.film-link {
+    margin-bottom: 25px;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.film-link {
+    text-decoration: none;
+    font-size: 26px;
+    color: white;
+    margin-right: 20px;
+}
+
+.genre-link {
+    text-decoration: none;
+    font-size: 26px;
+    font-family: cursive;
+    color: white;
+    margin-right: 20px;
+}
+
+.film-link:hover {
+    color: sandybrown;
+    animation: 0.3s ease-in;
+}
+
+.genre-link:hover {
+    color: sandybrown;
+    animation: 0.3s ease-in;
+}
+
+a.film-search-link {
+    font-size: 23px;
+    text-decoration: none;
+    color: white;
+}
+
+a.film-search-link:hover {
+    color: sandybrown;
+}
+
+
+.film-info {
+    text-decoration: none;
+    font-size: 26px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+
+.film-view-link {
+    text-decoration: none;
+}
+
+.film-view-link:hover, .film-view-link:active, .film-view-link:focus {
+    background-color: #1f1fa7;
+    color: #1f1fa7;
+}
+
+.card:hover {
+    transition: 0.3s ease;
+    opacity: 0.8;
+    background-color: grey;
+}
+
+
+.film-rating {
+    font-size: 20px;
+    font-style: italic;
+    color: sandybrown;
+    padding-top: 20px;
+    display: block;
+    margin-top: 20px;
+}
+
+
+.movie-image {
+    object-fit: scale-down;
+    height: 100%;
+}
+
+.film-details {
+    margin-top: 60%;
+}
+
+/*show film page styles*/
+
+.film-image {
+    height: 100%;
+    width: auto;
+}
+
+.film-wrapper-wide {
+    background-color: black;
+    padding: 20px;
+    display: block;
+    max-width: 87%;
+    /*margin: 10px auto;*/
+}
+
+.film-reviews {
+    background-color: black
+}
+.film-reviews-header {
+    color: white;
+    font-size: 30px;
+    padding: 30px;
+}
+
+.film-description {
+    padding: 20px;
+    color: white;
+}
+
+.film-description-text {
+    font-size: 20px;
+}
+
+.film-rate {
+    color: white;
+    padding: 20px;
+}
+
+.film-rate-form {
+    margin-bottom: 60px;
+}
+
+.review-header {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+label {
+    font-size: 25px;
+}
+
+.mark {
+    margin-bottom: 20px;
+}
+
+textarea.review {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+p.review-content {
+    font-size: 17px;
+}
+
+.user-review {
+    width: 99.5%;
+    background-color: whitesmoke;
+    margin-bottom: 0;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.username {
+    font-weight: bolder;
+    color: #1f1fa7;
+    font-size: 17px;
+}
+
+
+/*end of show film page styles*/
+
+
+.rate-link {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+.rate-film-button {
+    background-color: #3838f6;
+    color: white;
+    margin-left: 20px;
+}
+
+.rate-film-button:hover, .rate-film-button:focus, .rate-film-button:active {
+    background-color: #1f1fa7;
+}
+
+.pages {
+    background-color: black;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.film-current-rating {
+    margin-bottom: 50px;
+    font-size: 30px;
+    color: sandybrown;
+}
+
+/*personal page styles*/
+
+.personal-wrapper {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    max-width: 1260px;
+    margin: 0 auto;
+    box-shadow: 0 2px 20px black;
+    position: relative;
+    transform: translateY(-40vh);
+}
+
+.personal-title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.personal-info {
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+
+/*end of personal page styles*/
+
+
+/*start of user manage page styles*/
+
+.change-user-button {
+    background-color: darkblue;
+    color: white;
+}
+
+thead {
+    font-size: 22px;
+}
+
+td {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+}
+
+.dark-body{
+    background-color: black;
+}
+
+.dark-wrapper {
+    z-index: 0;
+    min-height: 100vh;
+    padding-left: 5%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 3px solid silver;
+    border-collapse: collapse;
+}
+
+.users-table {
+    font-size: 19px;
+    background-color: white;
+    width: 94%;
+    margin-top: 30vh;
+    margin-left: 3%;
+}
+
+.table-link {
+    padding-left: 20px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/*end of user manage page styles*/
+
+/*styles for add film page*/
+
+.add-film-form-admin {
+    background-color: black;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.admin {
+    padding-left: 5%;
+    margin-top: 300px;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    margin-bottom: 50px;
+}
+
+.film-name {
+    padding-bottom: 10px;
+    width: 90%;
+}
+
+.film-description-admin {
+    padding-bottom: 10px;
+    width: 90%;
+}
+
+.about-film {
+    background-color: black;
+}
+
+.film-genres {
+    padding-bottom: 10px;
+    width: 90%;
+}
+
+.image-load {
+    color: white;
+}
+
+.film-input {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.genres-select {
+    margin-bottom: 10px;
+}
+
+.add-film-title {
+    font-size: 40px;
+    color: white;
+}
+
+/*edit page styles*/
+.edit-label {
+    color: white;
+}
+
+/*end of add film page*/
+
+footer {
+    background-color: black;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.footer-info {
+    font-size: 19px;
+    color: white;
+}
+
+.error {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: red;
+    font-weight: 400;
+    background-color: white;
+    width: 50%;
+    padding: 10px;
+}
+
+@media (max-width: 1087px) {
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    img.type-image {
+        height: 170px;
+    }
+
+    .header-burger {
+        display: block;
+    }
+
+    .header-nav {
+        transform: translateX(-100%);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        z-index: 10;
+        padding: 75px;
+    }
+
+    .header-active {
+        opacity: 100%;
+    }
+
+    .menu-active {
+        transform: translateX(0%);
+    }
+
+    .header-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .header-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .logo-link {
+        font-size: 42px;
+        line-height: 48px;
+    }
+
+    .header-nav-close {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+    }
+
+    .header-nav-close-line {
+        display: block;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+
+    .header-nav-close-line:first-child {
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .header-nav-close-line:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .benefits-cards {
+        padding: 0 15px;
+        grid-column-gap: 33px;
+    }
+
+    .search-films {
+        width: 75%;
+    }
+
+}
+
+.error-header {
+    font-size: 48px;
+    margin-top: 200px;
+}
+
+.error-wrapper {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        min-height: 120vh;
+    }
+
+    .manage-film {
+        width: 98%;
+    }
+
+    .card {
+        width: 98%;
+    }
+
+    img.type-image {
+        height: 110px;
+    }
+
+    .film-wrapper-wide {
+        max-width: 100%;
+    }
+
+    .search-films {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .add-film-form {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .into-subtitle {
+        margin-bottom: 40px;
+    }
+
+    .error {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .card {
+        display: block;
+    }
+
+    .card-img {
+        height: 75%;
+    }
+
+    .film-link {
+        font-size: 23px;
+    }
+
+    .film-details {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .rate-film-button {
+        bottom: 7px;
+    }
+
+    .into-title {
+        font-size: 30px;
+    }
+
+    .font-subtitle {
+        font-size: 16px;
+    }
+
+    .login-form-input {
+        width: 200px;
+        margin-right: 40px;
+        font-size: 16px;
+        padding-left: 30px;
+    }
+
+    .login-form-input::placeholder {
+        font-size: 16px;
+    }
+
+    .login-submit {
+        font-size: 16px;
+        padding: 5px 15px;
+    }
+
+    h2.film-link {
+        margin-bottom: 0;
+    }
+
+    .benefits-cards {
+        padding: 0 10px;
+    }
+
+    .benefits-cards {
+        display: block;
+    }
+
+    .benefit-card {
+        margin-bottom: 10px;
+        padding: 10px 0;
+    }
+
+    .benefit-card:first-child {
+        padding: 60px 0;
+    }
+
+    .benefit-title {
+        font-size: 28px;
+        line-height: 35px;
+        background-color: lightslategrey;
+        padding: 40px 20px 40px 20px;
+        position: absolute;
+    }
+
+    .types-img-title {
+        font-size: 22px;
+        bottom: 32%;
+    }
+
+    .film-info {
+        margin-bottom: 0;
+    }
+
+    .film-rating {
+        display: inline;
+        margin-top: 0;
+    }
+
+}
+
+@media (max-width: 568px) {
+    .search-films {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .genre-search {
+        margin-left: 0;
+        display: block;
+    }
+
+    .name-search {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .genres-options {
+        height: 36px;
+        width: 203px;
+    }
+}
+
+@media (max-width: 528px) {
+
+    .wrapper-wide {
+        padding: 7px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .intro {
+        min-height: 140vh;
+    }
+
+    .form-info {
+        margin-bottom: 10px;
+    }
+
+    .header-item {
+        margin-bottom: 60px;
+    }
+
+    .logo-link {
+        font-size: 35px;
+        line-height: 42px;
+    }
+
+    .users-table {
+        background-color: white;
+        width: 98%;
+        margin-top: 30vh;
+        padding: 5px;
+    }
+
+}
+
