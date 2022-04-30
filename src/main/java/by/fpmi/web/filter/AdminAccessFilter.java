@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.nio.file.AccessDeniedException;
-import java.util.Set;
+import java.util.List;
 
 public class AdminAccessFilter implements Filter {
 
