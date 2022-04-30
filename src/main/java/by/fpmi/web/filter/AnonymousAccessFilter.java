@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.Arrays;
 
 public class AnonymousAccessFilter implements Filter {
     private final List<String> allowedCommands = Arrays.asList("login", "login_page","main", "main_page", "register", "register_page");
