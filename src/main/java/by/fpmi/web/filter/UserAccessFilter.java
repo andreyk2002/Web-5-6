@@ -16,7 +16,7 @@ import java.util.Set;
 public class UserAccessFilter implements Filter {
 
     private static final String ACCESS_DENIED = "Access for requested resource denied for your user group";
-    private final Set<String> deniedCommands = Set.of("orderProject", "orderProjectPage");
+    private final Set<String> deniedCommands = Set.of("order_project", "order_project_page", "view_project", "view_project_page");
 
 
     @Override

@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class UserDaoImpl extends AbstractDao<User> implements UserDao {
 
-  public static final String FIND_USER = "SELECT * FROM user where username = ? and password = md5(?)";
+  public static final String FIND_USER = "SELECT * FROM user where name = ? and password = md5(?)";
 
   public UserDaoImpl(Connection connection) {
     super(connection, new UserMapper(), "user");
@@ -19,12 +19,12 @@ public class UserDaoImpl extends AbstractDao<User> implements UserDao {
 
   @Override
   public Optional<User> login(String username, String password) throws DaoException {
-    return executeForSingleResult(FIND_USER);
+    return executeForSingleResult(FIND_USER, username, password);
   }
 
   @Override
   public User register(String username, String password) throws DaoException {
-    long userId = updateQueryAndGetID("INSERT INTO user (name, password, role) values (? , md5(?), USER)");
+    long userId = updateQueryAndGetID("INSERT INTO user (name, password, role) values (? , md5(?), ?)", username, password, "USER");
     return getById(userId).get();
   }
 }

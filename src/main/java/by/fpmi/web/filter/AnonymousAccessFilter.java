@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.Set;
 
 public class AnonymousAccessFilter implements Filter {
-    private static final Set<String> allowedCommands = Set.of("login", "loginPage");
+    private static final Set<String> allowedCommands = Set.of("login", "login_page","main", "main_page", "register", "register_page");
     private String loginCommand;
 
     @Override
@@ -33,7 +33,7 @@ public class AnonymousAccessFilter implements Filter {
             HttpSession session = request.getSession();
             User user = (User) session.getAttribute("user");
             if (user == null) {
-                response.sendRedirect(request.getContextPath() + "?commandName=" + loginCommand);
+                response.sendRedirect(request.getContextPath() + "/controller?commandName=" + loginCommand);
                 return;
             }
         }

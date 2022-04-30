@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class UserMapper implements RowMapper<User> {
 
     public static final String ROLE = "role";
-    public static final String USERNAME = "username";
+    public static final String USERNAME = "name";
     public static final String ID = "id";
 
     @Override

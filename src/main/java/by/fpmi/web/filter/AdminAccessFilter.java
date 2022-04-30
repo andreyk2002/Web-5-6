@@ -18,7 +18,7 @@ import java.util.Set;
 public class AdminAccessFilter implements Filter {
 
     private static final String ACCESS_DENIED = "Access for requested resource denied for your user group";
-    private final Set<String> deniedCommands = Set.of("adminPage");
+    private final Set<String> deniedCommands = Set.of("admin_page");
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
