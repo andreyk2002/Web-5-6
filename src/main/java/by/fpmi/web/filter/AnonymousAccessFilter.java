@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.Set;
 
 public class AnonymousAccessFilter implements Filter {
-    private static final Set<String> allowedCommands = Set.of("login", "login_page","main", "main_page", "register", "register_page");
+    private final List<String> allowedCommands = Arrays.asList("login", "login_page","main", "main_page", "register", "register_page");
     private String loginCommand;
 
     @Override
