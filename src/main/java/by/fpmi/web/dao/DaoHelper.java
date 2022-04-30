@@ -6,6 +6,7 @@ import by.fpmi.web.dao.impl.CustomerDaoImpl;
 import by.fpmi.web.dao.impl.ProjectDaoImpl;
 import by.fpmi.web.dao.impl.ProjectDefinitionDaoImpl;
 import by.fpmi.web.dao.impl.TaskDaoImpl;
+import by.fpmi.web.dao.impl.UserDaoImpl;
 import by.fpmi.web.dao.impl.WorkerDaoImp;
 
 import java.sql.SQLException;
@@ -35,6 +36,10 @@ public class DaoHelper implements AutoCloseable {
 
     public ProjectDefinitionDao createProjectDefinitionDao(){
         return new ProjectDefinitionDaoImpl(connection);
+    }
+
+    public UserDao createUserDao() {
+        return new UserDaoImpl(connection);
     }
 
     @Override

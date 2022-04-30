@@ -1,8 +1,8 @@
 package by.fpmi.web.service;
 
-public class ServiceException extends Exception{
-    public ServiceException() {
-    }
+import java.util.function.Supplier;
+
+public class ServiceException extends Exception  {
 
     public ServiceException(String message) {
         super(message);
