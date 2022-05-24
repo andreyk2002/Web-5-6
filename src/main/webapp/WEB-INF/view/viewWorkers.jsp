@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="ctg" uri="customTags" %>
 <fmt:setLocale value="${sessionScope.local}"/>
 <fmt:setBundle basename="local"/>
 <html lang="en">
@@ -31,6 +32,7 @@
         <form id="delayed-races-form"></form>
     </div>
 
+  <ctg:workerInfo workers="${workers}"/>
     <div class="page-table">
         <table class="table">
             <thead>
