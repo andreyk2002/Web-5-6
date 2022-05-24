@@ -32,8 +32,8 @@
         <form id="delayed-races-form"></form>
     </div>
 
-  <ctg:workerInfo workers="${workers}"/>
     <div class="page-table">
+    <ctg:workerInfo workers="${workers}"/>
         <table class="table">
             <thead>
             <tr>

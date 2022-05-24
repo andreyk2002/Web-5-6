@@ -7,16 +7,15 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
+import java.io.IOException;
 import java.util.List;
 
 public class WorkersTableTag extends TagSupport {
 
-    private static final String INFO_HEADER = "<h3 class=\"personal-info\">";
-    private static final String CLOSE_INFO = "</h3>";
-    private static final String TITLE_HEADER = "<h2 class=\"personal-title\">";
-    private static final String CLOSE_TITLE = "</h2>";
-    private static final String NAME_PROPERTY = "local.username";
-    private static final String RATING_PROPERTY = "local.rating";
+    private static final String OPEN_HEADER = " <table class=\"table\">";
+    private static final String CLOSE_TABLE = "</table>";
+    private static final String CLOSE_BODY = "</tbody>";
+    private static final String OPEN_BODY = "<tbody>";
 
     private List<WorkerDto> workersDto;
 
@@ -28,11 +27,15 @@ public class WorkersTableTag extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
         HttpSession session = pageContext.getSession();
-
-        double rating = workersDto.getRating();
         StringBuilder content = new StringBuilder();
-        content.append(makeTitle(loginLabel, login));
-        content.append(makeInfo(ratingLabel, Double.toString(rating)));
+        content.append(OPEN_HEADER);
+        content.append(makeHeader());
+        content.append(OPEN_BODY);
+        for (WorkerDto workerDto : workersDto) {
+            content.append(makeRow(workerDto));
+        }
+        content.append(CLOSE_BODY);
+        content.append(CLOSE_TABLE);
         try {
             JspWriter out = pageContext.getOut();
             out.write(content.toString());
@@ -42,24 +45,26 @@ public class WorkersTableTag extends TagSupport {
         return SKIP_BODY;
     }
 
-    private StringBuilder makeInfo(String label, String content) {
-        StringBuilder info = new StringBuilder();
-        info.append(INFO_HEADER);
-        info.append(label);
-        info.append(" : ");
-        info.append(content);
-        info.append(CLOSE_INFO);
-        return info;
+    private String makeRow(WorkerDto workerDto) {
+        return "<tr>" +
+                "<th scope=\"col\">" + workerDto.getId() + "</th>" +
+                "<th scope=\"col\">" + workerDto.getName() + "</th>" +
+                "<th scope=\"col\">" + workerDto.getSurname() + "</th>" +
+                "<th scope=\"col\">" + workerDto.getQualification() + "</th>" +
+                "<th scope=\"col\">" + workerDto.getSalary() + "</th>" +
+                "</tr>";
     }
 
-    private StringBuilder makeTitle(String loginLabel, String login) {
-        StringBuilder title = new StringBuilder();
-        title.append(TITLE_HEADER);
-        title.append(loginLabel);
-        title.append(" : ");
-        title.append(login);
-        title.append(CLOSE_TITLE);
-        return title;
+    private String makeHeader() {
+        return "            <thead>\n" +
+                "            <tr>\n" +
+                "                <th scope=\"col\">ID</th>\n" +
+                "                <th scope=\"col\"><fmt:message key=\"local.name\"/>Name</th>\n" +
+                "                <th scope=\"col\"><fmt:message key=\"local.surname\"/>Surname</th>\n" +
+                "                <th scope=\"col\"><fmt:message key=\"local.qualification\"/>Qualification</th>\n" +
+                "                <th scope=\"col\"><fmt:message key=\"local.salary\"/>Salary</th>\n" +
+                "            </tr>\n" +
+                "            </thead>";
     }
 
 
