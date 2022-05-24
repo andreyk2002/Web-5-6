@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<fmt:setLocale value="${sessionScope.local}"/>
+<fmt:setBundle basename="local"/>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -22,28 +24,9 @@
 </head>
 
 <body>
-<header class="bg-primary">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Конструкструкторское бюро <b class="text-danger">"Илон Маск"</b></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=order_project_page">Заказать проект</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_project">Просмотреть свои проекты</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_workers">Просмотр работников</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<jsp:include page="fragments/header.jsp"/>
 <div class="wrapper text-center">
-    <h1>Ваши проекты</h1>
+    <h1><fmt:message key="local.your_projects"/></h1>
 
     <div class="page-form">
         <form id="all-races-form"></form>
@@ -54,9 +37,9 @@
             <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Project Description</th>
-                <th scope="col">Name</th>
-                <th scope="col">Paid</th>
+                <th scope="col"><fmt:message key="local.projectDescription"/>Project Description</th>
+                <th scope="col"><fmt:message key="local.projectName"/>Name</th>
+                <th scope="col"><fmt:message key="local.paid"/>Paid</th>
             </tr>
             </thead>
             <tbody>
@@ -72,7 +55,7 @@
         </table>
     </div>
 
-    <a href="${pageContext.request.contextPath}/controller?commandName=main"> На главную</a>
+    <a href="${pageContext.request.contextPath}/controller?commandName=main"><fmt:message key="local.toMain"/></a>
 </div>
 
 <script src="../../static/js/script.js"></script>

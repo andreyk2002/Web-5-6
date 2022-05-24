@@ -54,6 +54,9 @@ public class CommandFactory {
         if (command == Commands.ADMIN_PAGE) {
             return new ShowPageCommand(Pages.ADMIN_PAGE);
         }
+        if(command == Commands.VIEW_CHAT){
+          return new ShowPageCommand(Pages.CHAT_PAGE);
+        }
         throw new CommandNotExistException("Unknown type = " + commandName);
     }
 }

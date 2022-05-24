@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<fmt:setLocale value="${sessionScope.local}"/>
+<fmt:setBundle basename="local"/>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -21,44 +23,25 @@
     />
 </head>
 <body>
-<header class="bg-primary">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Конструкструкторское бюро <b class="text-danger">"Илон Маск"</b></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=order_project_page">Заказать проект</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_project">Просмотреть свои проекты</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_workers">Просмотр работников</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<jsp:include page="fragments/header.jsp"/>
 <div class="p-4">
-    <h1>Заказать проект</h1>
+    <h1><fmt:message key="local.orderProject"/></h1>
 
     <div class="page-form">
         <form method="post" id="create-project-form" class="w-75" action="${pageContext.request.contextPath}/controller?commandName=order_project">
             <input required name="projectName" type="text"
-                   placeholder="project name"/>
+                   placeholder="<fmt:message key="local.projectName"/>"/>
             <br/>
             <br/>
             <textarea class="film-description-admin film-input" rows="7" cols="55" name="projectDescription"
-                      placeholder="project description"></textarea>
+                      placeholder="<fmt:message key="local.projectDescription"/>"></textarea>
             <br/>
             <br/>
-            <button type="submit" class="btn-primary">Order</button>
+            <button type="submit" class="btn-primary"><fmt:message key="local.order"/></button>
         </form>
     </div>
 
-    <a href="${pageContext.request.contextPath}/controller?commandName=main"> На главную</a>
+    <a href="${pageContext.request.contextPath}/controller?commandName=main"><fmt:message key="local.toMain"/></a>
 
     <script src="../../static/js/script.js"></script>
 </div>

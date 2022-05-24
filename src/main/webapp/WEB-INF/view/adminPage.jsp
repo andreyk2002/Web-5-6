@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<fmt:setLocale value="${sessionScope.local}"/>
+<fmt:setBundle basename="local"/>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -21,26 +23,7 @@
     />
 </head>
 <body>
-<header class="bg-primary">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Конструкструкторское бюро <b class="text-danger">"Илон Маск"</b></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=order_project_page">Заказать проект</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_project">Просмотреть свои проекты</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_workers">Просмотр работников</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
- <h1 class="text-center">Welcome to admin page</h1>
+ <jsp:include page="fragments/header.jsp"/>
+ <h1 class="text-center"><fmt:message key="local.welcome_admin"/></h1>
 </body>
 </html>

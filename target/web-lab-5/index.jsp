@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<fmt:setLocale value="${sessionScope.local}"/>
+<fmt:setBundle basename="local"/>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -12,41 +16,23 @@
     />
 </head>
 <body>
-<header class="bg-primary">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Конструкструкторское бюро <b class="text-danger">"Илон Маск"</b></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=order_project_page">Заказать проект</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_project">Просмотреть свои проекты</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_workers">Просмотр работников</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<jsp:include page="WEB-INF/view/fragments/header.jsp"/>
 <div class="wrapper">
     <div class="section-first p-4">
-        <h1 class="h1 heading text-center">Конструкструкторское бюро <b class="text-danger">"Илон Маск"</b></h1>
+        <h1 class="h1 heading text-center"><fmt:message key="local.constructor_agency"/>
+          <b class="text-danger">"<fmt:message key="local.ilon_musk"/>"</b></h1>
         <div class="mt-5">
             <p class="h3">
-                Конструкторское бюро <b class="text-danger">"Илон Маск"</b> это:
+              <fmt:message key="local.constructor_agency"/> <b class="text-danger">"<fmt:message key="local.ilon_musk"/>"</b>:
             <ul class="mt-2">
                 <li>
-                    <h4 class="text-primary">0+ довольных заказчиков</h4>
+                    <h4 class="text-primary"><fmt:message key="local.happyConsumers"/></h4>
                 </li>
                 <li>
-                    <h4 class="text-info">0+ реализованных проектов</h4>
+                    <h4 class="text-info"><fmt:message key="local.developedProjects"/></h4>
                 </li>
                 <li>
-                    <h4 class="text-success">Разработка с помощью новейших систем принятия решений</h4>
+                    <h4 class="text-success"><fmt:message key="local.newSystems"/></h4>
                 </li>
             </ul>
         </div>

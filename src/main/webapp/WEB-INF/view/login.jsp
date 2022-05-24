@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<fmt:setLocale value="${sessionScope.local}"/>
+<fmt:setBundle basename="local"/>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -25,19 +27,19 @@
     <title>Title</title>
 </head>
 <body class="mt-5">
-<h1 class="text-center">Login</h1>
+<h1 class="text-center"><fmt:message key="local.login"/></h1>
 <form method="post" id="create-project-form" class="w-75 ml-5" action="${pageContext.request.contextPath}/controller?commandName=login">
     <input required name="username" type="text"
-           placeholder="your username"/>
+           placeholder="<fmt:message key="local.your_username"/>"/>
     <br/>
     <br/>
     <input required name="password" type="password"
-           placeholder="your password"/>
+           placeholder="<fmt:message key="local.your_password"/>"/>
     <br/>
     <br/>
-    <button type="submit" class="btn-primary">Login</button>
+    <button type="submit" class="btn-primary"><fmt:message key="local.login"/></button>
 </form>
-<p class="text-center">Doesn't have an account. Register
-  <a href="${pageContext.request.contextPath}/controller?commandName=register_page">here</a></p>
+<p class="text-center"><fmt:message key="local.no_account"/>? <fmt:message key="local.register"/> Register
+  <a href="${pageContext.request.contextPath}/controller?commandName=register_page"><fmt:message key="local.here"/>here</a></p>
 </body>
 </html>

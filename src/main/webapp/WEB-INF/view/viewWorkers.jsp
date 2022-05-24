@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<fmt:setLocale value="${sessionScope.local}"/>
+<fmt:setBundle basename="local"/>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -21,28 +23,9 @@
     />
 </head>
 <body>
-<header class="bg-primary">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Конструкструкторское бюро <b class="text-danger">"Илон Маск"</b></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=order_project_page">Заказать проект</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_project">Просмотреть свои проекты</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/controller?commandName=view_workers">Просмотр работников</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<jsp:include page="fragments/header.jsp"/>
 <div class="p-4">
-    <h1 class="text-center">Вывести свободных работников.</h1>
+    <h1 class="text-center"><fmt:message key="local.freeWorkers"/>Вывести свободных работников.</h1>
 
     <div class="page-form">
         <form id="delayed-races-form"></form>
@@ -53,10 +36,10 @@
             <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Surname</th>
-                <th scope="col">Qualification</th>
-                <th scope="col">Salary</th>
+                <th scope="col"><fmt:message key="local.name"/>Name</th>
+                <th scope="col"><fmt:message key="local.surname"/>Surname</th>
+                <th scope="col"><fmt:message key="local.qualification"/>Qualification</th>
+                <th scope="col"><fmt:message key="local.salary"/>Salary</th>
             </tr>
             </thead>
             <tbody>
@@ -73,7 +56,7 @@
         </table>
     </div>
 
-    <a href="${pageContext.request.contextPath}/controller?commandName=main"> На главную</a>
+    <a href="${pageContext.request.contextPath}/controller?commandName=main"><fmt:message key="local.toMain"/></a>
 </div>
 
 <script src="../../static/js/script.js"></script>

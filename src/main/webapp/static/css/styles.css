@@ -99,3 +99,17 @@ ul {
     background-color: #2b3d67;
     color: white;
 }
+
+.languages {
+  display: flex;
+  justify-content: space-between;
+}
+
+.change-lang {
+  width: 30%;
+}
+
+.change-lang-btn {
+  color: white;
+  background-color: #1f1fa7;
+}
